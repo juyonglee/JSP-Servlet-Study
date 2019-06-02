@@ -101,7 +101,7 @@ try {
 ## 2. web.xml 파일에 에러 페이지 등록 및 처리
 ### Exception Type별로 에러 페이지 등록
 웹 전체에 등록하는 방식이다.
-- [Step1] 예외 처리를 코드를 추가하지 않고 단순히 동작하는 페이지를 생성한다.
+- **[Step1]** 예외 처리를 코드를 추가하지 않고 단순히 동작하는 페이지를 생성한다.
     ```JSP
     <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -111,7 +111,7 @@ try {
         out.print("사용자의 나이는 " + age + "살입니다.");
     %>
     ```
-- [Step2] web.xml에 `<error-page>`에 처리한 exception을 `<exception-type>`에 추가하고 에러를 처리할 페이지를 `location`에 추가한다.
+- **[Step2]** web.xml에 `<error-page>`에 처리한 exception을 `<exception-type>`에 추가하고 에러를 처리할 페이지를 `location`에 추가한다.
     ```xml
    <?xml version="1.0" encoding="UTF-8"?>
     <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
@@ -130,7 +130,7 @@ try {
     </error-page>
     </web-app>
     ```
-- [Step3] Error를 처리할 페이지 생성 후 `isErrorPage`를 true로 설정한다.
+- **[Step3]** Error를 처리할 페이지 생성 후 `isErrorPage`를 true로 설정한다.
     ```JSP
     <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isErrorPage="true"%>
@@ -150,4 +150,52 @@ try {
     ```
     | [예제] index.jsp, result05.jsp, numberError.jsp, web.xml |
     | --- |
-    | ![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/08.%20Error%2C%20Exception%20처리%20기술/Images/Case5.gif)  |
+    | ![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/08.%20Error%2C%20Exception%20처리%20기술/Images/Case5.gif) |
+
+## 3. HTTP 상태 코드별 에러 페이지 등록 및 처리
+- **[Step1]** web.xml에 `<error-page>`에 처리한 exception을 `<exception-type>`에 추가하고 에러를 처리할 페이지를 `location`에 추가한다.
+    ```xml
+  <?xml version="1.0" encoding="UTF-8"?>
+    <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+    <display-name>Error Handling Example</display-name>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>default.html</welcome-file>
+        <welcome-file>default.htm</welcome-file>
+        <welcome-file>default.jsp</welcome-file>
+    </welcome-file-list>
+    <error-page>
+        <exception-type>java.lang.NumberFormatException</exception-type>
+        <location>/numberError.jsp</location>
+    </error-page>
+    <!-- 요청 페이지가 존재하지 않는 경우 -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/pageNotFound.jsp</location>
+    </error-page>
+    </web-app>
+    ```
+- **[Step2]** Error를 처리할 페이지 생성 후 `isErrorPage`를 true로 설정한다.
+    ```JSP
+  <%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isErrorPage="true"%>
+    <%
+        response.setStatus(404);
+    %>
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta charset="UTF-8">
+    <title>Error Page:pageNotFound</title>
+    </head>
+    <body>
+        <h3>페이지가 존재하지 않습니다.</h3>
+    </body>
+    </html>
+    ```
+- **[Step3]** 존재하지 않는 경로로 파일을 요청한다.
+    | [예제] index.jsp, pageNotFound.jsp, web.xml |
+    | --- |
+    | ![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/08.%20Error%2C%20Exception%20처리%20기술/Images/Case6.gif) 
