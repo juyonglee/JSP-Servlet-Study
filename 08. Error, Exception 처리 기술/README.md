@@ -29,12 +29,50 @@ try {
     ```
 
 ### 예제 1. 예외 처리를 하지 않은 경우
+```JSP
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	String user_age = request.getParameter("user_age");
+	// NumberFormatException 예외가 발생 시 에러에 대응할 수 없다.
+	int age = Integer.parseInt(user_age);	
+	out.print("사용자의 나이는 " + age + "살입니다.");
+%>
+```
 ![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/08.%20Error%2C%20Exception%20처리%20기술/Images/Case1.gif)
 
 
 ### 예제 2. 예외 처리를 적용한 경우 (Try-Catch)
+```Java
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	try {
+		String user_age = request.getParameter("user_age");
+		int age = Integer.parseInt(user_age);
+		out.print("사용자의 나이는 " + age + "살입니다.");
+	} catch(Exception e) {
+		out.print("숫자만 입력가능합니다.");
+	}
+%>
+```
 ![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/08.%20Error%2C%20Exception%20처리%20기술/Images/Case2.gif)
 
 ### 예제 3. 예외 처리를 적용한 경우 (RequestDispatcher)
+```Java
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	try {
+		String user_age = request.getParameter("user_age");
+		int age = Integer.parseInt(user_age);
+		out.print("사용자의 나이는 " + age + "살입니다.");
+	} catch(Exception e) {
+		RequestDispatcher dispatcher = request.getRequestDispatcher("error.jsp");
+		dispatcher.forward(request, response);
+	}
+%>
+```
 ![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/08.%20Error%2C%20Exception%20처리%20기술/Images/Case3.gif)
+
 상세 처리가 불가능하다 (errorPage)
