@@ -81,7 +81,7 @@ try {
     %>
     ```
 - 에러 상세 내용 출력
-    `isErrorPage`를 true로 설정한다. 편리하긴 하지만 각각의 에러에 대한 상세한 처리가 불가능하다.
+    `isErrorPage`를 true로 설정한다. 편리하긴 하지만 각각의 에러에 대한 상세한 처리가 불가능하다. 또한 Console 창에 에러가 출력되므로 서버 성능의 저하를 가져올 수도 있다.
     ```JSP
     <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" 
@@ -99,3 +99,55 @@ try {
     | ![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/08.%20Error%2C%20Exception%20처리%20기술/Images/Case4.gif)  |
 
 ## 2. web.xml 파일에 에러 페이지 등록 및 처리
+### Exception Type별로 에러 페이지 등록
+웹 전체에 등록하는 방식이다.
+- [Step1] 예외 처리를 코드를 추가하지 않고 단순히 동작하는 페이지를 생성한다.
+    ```JSP
+    <%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%
+        String user_age = request.getParameter("user_age");
+        int age = Integer.parseInt(user_age);
+        out.print("사용자의 나이는 " + age + "살입니다.");
+    %>
+    ```
+- [Step2] web.xml에 `<error-page>`에 처리한 exception을 `<exception-type>`에 추가하고 에러를 처리할 페이지를 `location`에 추가한다.
+    ```xml
+   <?xml version="1.0" encoding="UTF-8"?>
+    <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+    <display-name>Error Handling Example</display-name>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>default.html</welcome-file>
+        <welcome-file>default.htm</welcome-file>
+        <welcome-file>default.jsp</welcome-file>
+    </welcome-file-list>
+    <error-page>
+        <exception-type>java.lang.NumberFormatException</exception-type>
+        <location>/numberError.jsp</location>
+    </error-page>
+    </web-app>
+    ```
+- [Step3] Error를 처리할 페이지 생성 후 `isErrorPage`를 true로 설정한다.
+    ```JSP
+    <%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isErrorPage="true"%>
+    <%
+        response.setStatus(200);
+    %>
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta charset="UTF-8">
+    <title>Error Page:NumberFormationExcription</title>
+    </head>
+    <body>
+        <%= exception.getMessage() %>
+    </body>
+    </html>
+    ```
+    | [예제] index.jsp, result05.jsp, numberError.jsp, web.xml |
+    | --- |
+    | ![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/08.%20Error%2C%20Exception%20처리%20기술/Images/Case5.gif)  |
