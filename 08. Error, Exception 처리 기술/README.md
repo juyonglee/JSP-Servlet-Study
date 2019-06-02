@@ -24,7 +24,7 @@ try {
 	out.print("사용자의 나이는 " + age + "살입니다.");
 %>
 ```
-| [예제]  |
+| [예제] index.jsp, result01.jsp |
 | --- |
 | ![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/08.%20Error%2C%20Exception%20처리%20기술/Images/Case1.gif)  |
 
@@ -43,7 +43,10 @@ try {
 	}
 %>
 ```
-![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/08.%20Error%2C%20Exception%20처리%20기술/Images/Case2.gif)
+| [예제] index.jsp, result02.jsp |
+| --- |
+| ![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/08.%20Error%2C%20Exception%20처리%20기술/Images/Case2.gif)  |
+
 
 ### 예제 3. 예외 처리를 적용한 경우 (RequestDispatcher)
 `RequestDispatcher`는 클라이언트로의 최초 요청을 JSP/Servlet 내에서 원하는 자원으로 요청을 넘기는 역할을 수행하거나, 특정 자원에 처리를 요청하고 처리 결과를 얻어오는 기능을 수행하는 클래스이다.
@@ -61,7 +64,9 @@ try {
 	}
 %>
 ```
-![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/08.%20Error%2C%20Exception%20처리%20기술/Images/Case3.gif)
+| [예제] index.jsp, result03.jsp, error.jsp |
+| --- |
+| ![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/08.%20Error%2C%20Exception%20처리%20기술/Images/Case3.gif)  |
 
 ### 예제 4. 예외 처리를 적용한 경우 (간결한 에러 처리 방식)
  - JSP Page Directive 설정: errorPage 설정
@@ -89,6 +94,8 @@ try {
 	    history.back();
     </script>
     ```
-    ![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/08.%20Error%2C%20Exception%20처리%20기술/Images/Case4.gif)
+    | [예제] index.jsp, result04.jsp, error02.jsp |
+    | --- |
+    | ![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/08.%20Error%2C%20Exception%20처리%20기술/Images/Case4.gif)  |
 
 ## 2. web.xml 파일에 에러 페이지 등록 및 처리
