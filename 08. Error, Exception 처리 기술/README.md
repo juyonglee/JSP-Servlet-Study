@@ -24,7 +24,10 @@ try {
 	out.print("사용자의 나이는 " + age + "살입니다.");
 %>
 ```
-![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/08.%20Error%2C%20Exception%20처리%20기술/Images/Case1.gif)
+| [예제]  |
+| --- |
+| ![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/08.%20Error%2C%20Exception%20처리%20기술/Images/Case1.gif)  |
+
 
 ### 예제 2. 예외 처리를 적용한 경우 (Try-Catch)
 ```JSP
@@ -88,8 +91,4 @@ try {
     ```
     ![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/08.%20Error%2C%20Exception%20처리%20기술/Images/Case4.gif)
 
-
-
-
-
-
+## 2. web.xml 파일에 에러 페이지 등록 및 처리
