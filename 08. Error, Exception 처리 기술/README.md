@@ -13,21 +13,6 @@ try {
 }
 // 응답 내용
 ```
-
-`RequestDispatcher`는 클라이언트로의 최초 요청을 JSP/Servlet 내에서 원하는 자원으로 요청을 넘기는 역할을 수행하거나, 특정 자원에 처리를 요청하고 처리 결과를 얻어오는 기능을 수행하는 클래스이다.
-
-### 간결한 에러 처리 방식
- - JSP Page Directive 설정
-    ```JAVA
-    <%@ page errorPage="error.jsp" %>
-    ```
-
-- 에러 상세 내용 출력 ex) error.jsp
-    ```JAVA
-    <%@ page isErrorPage=“true” %>
-    <%= exception.getMessage() %>
-    ```
-
 ### 예제 1. 예외 처리를 하지 않은 경우
 ```JSP
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -41,9 +26,8 @@ try {
 ```
 ![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/08.%20Error%2C%20Exception%20처리%20기술/Images/Case1.gif)
 
-
 ### 예제 2. 예외 처리를 적용한 경우 (Try-Catch)
-```Java
+```JSP
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -59,7 +43,8 @@ try {
 ![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/08.%20Error%2C%20Exception%20처리%20기술/Images/Case2.gif)
 
 ### 예제 3. 예외 처리를 적용한 경우 (RequestDispatcher)
-```Java
+`RequestDispatcher`는 클라이언트로의 최초 요청을 JSP/Servlet 내에서 원하는 자원으로 요청을 넘기는 역할을 수행하거나, 특정 자원에 처리를 요청하고 처리 결과를 얻어오는 기능을 수행하는 클래스이다.
+```JSP
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -75,4 +60,36 @@ try {
 ```
 ![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/08.%20Error%2C%20Exception%20처리%20기술/Images/Case3.gif)
 
-상세 처리가 불가능하다 (errorPage)
+### 예제 4. 예외 처리를 적용한 경우 (간결한 에러 처리 방식)
+ - JSP Page Directive 설정: errorPage 설정
+    에러가 발생할 경우 이동할 페이지를 `errorPage`에 설정한다.
+    ```JSP
+    <%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" errorPage="/error02.jsp"%>
+    <%
+	    String user_age = request.getParameter("user_age");
+	    int age = Integer.parseInt(user_age);
+	    out.print("사용자의 나이는 " + age + "살입니다.");
+    %>
+    ```
+- 에러 상세 내용 출력
+    `isErrorPage`를 true로 설정한다. 편리하긴 하지만 각각의 에러에 대한 상세한 처리가 불가능하다.
+    ```JSP
+    <%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" 
+    isErrorPage="true"%>
+    <%
+	    System.out.println("Error Message: " + exception.getMessage());
+    %>
+    <script>
+	    alert("숫자만 입력가능합니다.");
+	    history.back();
+    </script>
+    ```
+    ![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/08.%20Error%2C%20Exception%20처리%20기술/Images/Case4.gif)
+
+
+
+
+
+
