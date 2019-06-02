@@ -35,5 +35,12 @@
 			<input type="submit" value="전송">
 		</form>
 	</div>
+	<div>
+		<h3>나이 입력 [예외 처리 적용 - web.xml]</h3>
+		<form action="/Error_Handling_Example/result05.jsp" method="get">
+			<input type="text" name="user_age" placeholder="나이를 입력해 주세요.">
+			<input type="submit" value="전송">
+		</form>
+	</div>
 </body>
 </html>
