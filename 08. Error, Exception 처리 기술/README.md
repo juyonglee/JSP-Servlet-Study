@@ -196,6 +196,7 @@ try {
     </html>
     ```
 - **[Step3]** 존재하지 않는 경로로 파일을 요청한다.
+    
     | [예제] index.jsp, pageNotFound.jsp, web.xml |
     | --- |
     | ![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/08.%20Error%2C%20Exception%20처리%20기술/Images/Case6.gif) |
