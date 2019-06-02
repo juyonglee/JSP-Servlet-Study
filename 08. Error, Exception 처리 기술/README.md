@@ -36,5 +36,5 @@ try {
 ![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/08.%20Error%2C%20Exception%20처리%20기술/Images/Case2.gif)
 
 ### 예제 3. 예외 처리를 적용한 경우 (RequestDispatcher)
-![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/08.%20Error%2C%20Exception%20처리%20기술/Images/Case2.gif)
+![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/08.%20Error%2C%20Exception%20처리%20기술/Images/Case3.gif)
 상세 처리가 불가능하다 (errorPage)
