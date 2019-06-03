@@ -10,15 +10,16 @@
         ```JSP
         request.setAttribute("age", 10);
         ```
-    - Expression을 사용한 응답 페이지
+    - **Expression**을 사용한 응답 페이지
         ```JSP
         <%= request.getAttribute("age") %>
         ```
-    - EL을 사용한 응답 페이지
+    - **EL**을 사용한 응답 페이지
         ```JSP
         ${age}
         ```
 3. EL을 처리하는 순서는 `Container가 값을 찾는 순서`를 의미한다.
+
     |       |  개요  |  의미  |
     | :---: | :---: | :---: | 
     | page    | (1) ${pageScope.age} | 현재 화면을 의미 |
