@@ -12,3 +12,4 @@ JSP와 Servlet를 꼼꼼히 정리하자!!
 6. Cookie 처리 기술
 7. Session 처리 기술
 8. [Error, Exception 처리 기술](https://github.com/juyonglee/JSP-Servlet-Study/tree/master/08.%20Error%2C%20Exception%20처리%20기술)
+9. [JSP Expression Language (1)](https://github.com/juyonglee/JSP-Servlet-Study/tree/master/09.%20JSP%20Expression%20Language%20(1))
