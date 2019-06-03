@@ -39,7 +39,7 @@
 | requestScope     | request attribute의 집합 (요청이 유효한 페이지) |
 | sessionScope     | session attribute의 집합 (세션이 유효한 페이지) |
 | applicationScope | application attribute의 집합 (전체 페이지) |
-| param            | 웹 브라우저로부터 입력된 데이터의 집합 `(request.getParameter("num01") = params.num01로 접근 가능)` |
+| param            | 웹 브라우저로부터 입력된 데이터의 집합 `(request.getParameter("num01")는 params.num01와 같다!)` |
 | paramValues      | 웹 브라우저로부터 입력된 여러 개의 데이터집합 (Ex> checkbox) |
 | header           | HTTP 요청 메시지에 있는 HTTP 헤더의 집합 |
 | headerValues     | HTTP 요청 메시지에 있는 HTTP 헤더의 집합 (동일한 헤더가 여러 개 존재하는 경우) |
