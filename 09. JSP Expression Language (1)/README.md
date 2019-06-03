@@ -24,5 +24,5 @@
     | :---: | :---: | :---: | 
     | page    | (1) ${pageScope.age} | 현재 화면을 의미 |
     | request | (2) ${requestScope.age} | 요청이 유효한 페이지를 의미 (A라는 곳에서 B라는 곳으로 넘어가는 경우) |
-    | session | (3) ${sessionScope.age} | 세현이 유효한 페이지를 의미 (유지해야할 데이터가 있는 경우) |
+    | session | (3) ${sessionScope.age} | 세션이 유효한 페이지를 의미 (유지해야할 데이터가 있는 경우) |
     | application | (4) ${applicationScope.age} | Web Container 전체를 의미 |
