@@ -1,4 +1,4 @@
-# 10. JSP Expression Language (1)
+# 9. JSP Expression Language (1)
 ## 1. Expression Language 기초 문법
 1. Expression은 `식 (값을 의미)`이라고 통상적으로 지칭한다. 즉, 식을 중심으로 코드를 기술하는 언어를 의미한다.
     - **EL**을 적용한 경우

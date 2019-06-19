@@ -1,4 +1,4 @@
-# 11. JSP Expression Language (2)
+# 10. JSP Expression Language (2)
 ## 1. Expression 연산자
 |       |  개요  |  의미  |
 | :---: | :---: | :---: | 
