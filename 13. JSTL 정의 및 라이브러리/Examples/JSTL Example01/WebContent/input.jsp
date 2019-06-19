@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="send.jsp">
+	<form action="send01.jsp">
 		<input type="text" name="num01">
 		<input type="text" name="num02">
 		<input type="submit" value="전송">
