@@ -1,15 +1,14 @@
 # 10. JSP Expression Language (1)
 ## 1. Expression Language 기초 문법
 1. Expression은 `식 (값을 의미)`이라고 통상적으로 지칭한다. 즉, 식을 중심으로 코드를 기술하는 언어를 의미한다.
-    
-    EL을 적용한 경우
-    ```JSP
-    ${age+1}
-    ```
-    Scripting 요소인 Expression을 적용한 경우
-    ```JSP
-    <%= age+1 %>
-    ```
+    - **EL**을 적용한 경우
+        ```JSP
+        ${age+1}
+        ```
+    - **Expression**을 적용한 경우
+        ```JSP
+        <%= age+1 %>
+        ```
 2. EL식에 표함된 데이터는 `getAttribute()`또는 `setArribute()` 형태로 이용한다.
     - 요청 페이지
         ```JSP
@@ -58,5 +57,5 @@
 
 | [예제] ELTest.java, index.jsp, result.jsp |
 | --- |
-| [](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/09.%20JSP%20Expression%20Language%20(1)/Images/Example.gif)  |
+| ![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/09.%20JSP%20Expression%20Language%20(1)/Images/Example.gif)  |
 |[예제 Source](https://github.com/juyonglee/JSP-Servlet-Study/tree/master/09.%20JSP%20Expression%20Language%20(1)/Examples)|
