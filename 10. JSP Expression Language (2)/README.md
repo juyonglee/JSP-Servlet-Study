@@ -34,5 +34,5 @@
 
 | [예제] index.jsp |
 | --- |
-|![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/10.%20JSP%20Expression%20Language%20(2)/Images/Case1.png){: width="100%"}|
+|![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/10.%20JSP%20Expression%20Language%20(2)/Images/Case1.png) |
 | [예제코드](https://github.com/juyonglee/JSP-Servlet-Study/tree/master/10.%20JSP%20Expression%20Language%20(2)/Examples/Example01) |
