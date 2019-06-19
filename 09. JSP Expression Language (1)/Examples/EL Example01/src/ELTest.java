@@ -43,6 +43,7 @@ public class ELTest extends HttpServlet {
 			request.setAttribute("NUM01", num01);
 			request.setAttribute("NUM02", num02);
 			request.setAttribute("SUM", sum);
+			// 제어권을 result.jsp에 넘긴다. 
 			RequestDispatcher dispatcher = request.getRequestDispatcher("result.jsp");
 			dispatcher.forward(request, response);
 		} catch (Exception e){
