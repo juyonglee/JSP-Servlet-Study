@@ -73,7 +73,8 @@
     ```
 
 ### 예제 2. 정적 메소드 사용 예
-    | [예제] JUYONGLEE.java, juyonglee.tld, index.jsp |
-    | :---: |
-    |![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/10.%20JSP%20Expression%20Language%20(2)/Images/Case2.png) |
-    | [예제코드](https://github.com/juyonglee/JSP-Servlet-Study/tree/master/10.%20JSP%20Expression%20Language%20(2)/Examples/Example02) |
+
+| [예제] JUYONGLEE.java, juyonglee.tld, index.jsp |
+| :---: |
+|![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/10.%20JSP%20Expression%20Language%20(2)/Images/Case2.png) |
+| [예제코드](https://github.com/juyonglee/JSP-Servlet-Study/tree/master/10.%20JSP%20Expression%20Language%20(2)/Examples/Example02) |
