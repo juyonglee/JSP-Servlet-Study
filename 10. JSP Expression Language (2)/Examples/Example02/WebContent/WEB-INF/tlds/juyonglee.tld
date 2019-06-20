@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>2.2</jsp-version>
+	<short-name>my</short-name>
+	<function>
+		<name>greeting</name>
+		<function-class>juyonglee.JUYONGLEE</function-class>
+		<function-signature>java.lang.String hello(java.lang.String)</function-signature>
+	</function>
+</taglib>
