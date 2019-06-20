@@ -33,6 +33,46 @@
 ```
 
 | [예제] index.jsp |
-| --- |
+| :---: |
 |![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/10.%20JSP%20Expression%20Language%20(2)/Images/Case1.png) |
 | [예제코드](https://github.com/juyonglee/JSP-Servlet-Study/tree/master/10.%20JSP%20Expression%20Language%20(2)/Examples/Example01) |
+
+
+## 2. 정적 메소드 호출
+- **[Step01]** Class 및 정적 메소드 생성 **(Static 메소드로 생성해야 한다!)**
+    ```Java
+    package juyonglee;
+    
+    public class JUYONGLEE {
+        public static String hello(String name) {
+            return "Hello, " + name + "님!";
+        }
+    }
+    ```
+- **[Step02]** **taglib** 생성
+    ```xml
+    <?xml version="1.0" encoding="UTF-8"?>
+    <taglib>
+	    <tlib-version>1.0</tlib-version>
+	    <jsp-version>2.2</jsp-version>
+	    <short-name>my</short-name>
+	    <function>
+		    <name>greeting</name>
+		    <function-class>juyonglee.JUYONGLEE</function-class>
+		    <function-signature>java.lang.String hello(java.lang.String)</function-signature>
+	    </function>
+    </taglib>
+    ```
+- **[Step03]** **taglib** 사용 
+    ```JSP
+    <%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib uri="/WEB-INF/tlds/juyonglee.tld" prefix="jyl"%>
+    <h2>사용자 정의 태그 라이브러리 (정적메소드)</h2>
+    ${jyl:greeting("소주용")}
+    ```
+
+| [예제] JUYONGLEE.java, juyonglee.tld, index.jsp |
+| :---: |
+|![](https://github.com/juyonglee/JSP-Servlet-Study/blob/master/10.%20JSP%20Expression%20Language%20(2)/Images/Case2.png) |
+| [예제코드](https://github.com/juyonglee/JSP-Servlet-Study/tree/master/10.%20JSP%20Expression%20Language%20(2)/Examples/Example02) |
