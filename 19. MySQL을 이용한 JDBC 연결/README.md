@@ -23,16 +23,16 @@ JDBC 사용을 위해 [MySQL Connector/J](https://mvnrepository.com/artifact/mys
 
 ### 연결 및 해제
 ```Java
-// 데이터베이스명을 포함한 URL 기술  
-String url = "jdbc:mysql://localhost:3306/dbName";
+// 데이터베이스명을 포함한 URL 기술 (Exception 방지를 위해 useSSL을 false로 설정)
+String url = "jdbc:mysql://localhost:3306/dbName?useSSL=false";
 // 사용자 계정
 String userID = "root"; 
-// 사용자 계정의 패스워드   
-String userPW = "****";    
+// 사용자 계정의 패스워드
+String userPW = "****";
 // Class.forName()을 이용해서 JDBC 드라이버 로드
-Class.forName("com.mysql.jdbc.Driver");
+Class.forName("com.mysql.cj.jdbc.Driver");
 // 연결 객체 얻기
-Connection conn = DriverManager.getConnection(url, userID, userPW);    
+Connection conn = DriverManager.getConnection(url, userID, userPW);
 // 연결 종료
 conn.close();
 ```
