@@ -30,7 +30,7 @@ String userID = "root";
 // 사용자 계정의 패스워드   
 String userPW = "****";    
 Class.forName("com.mysql.jdbc.Driver");
-Connection conn =DriverManager.getConnection(url,userID, userPW);    
+Connection conn =DriverManager.getConnection(url, userID, userPW);    
 // 연결 종료
 conn.close();
 ```
