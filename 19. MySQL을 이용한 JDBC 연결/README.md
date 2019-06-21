@@ -29,8 +29,10 @@ String url = "jdbc:mysql://localhost:3306/dbName";
 String userID = "root"; 
 // 사용자 계정의 패스워드   
 String userPW = "****";    
+// Class.forName()을 이용해서 JDBC 드라이버 로드
 Class.forName("com.mysql.jdbc.Driver");
-Connection conn =DriverManager.getConnection(url, userID, userPW);    
+// 연결 객체 얻기
+Connection conn = DriverManager.getConnection(url, userID, userPW);    
 // 연결 종료
 conn.close();
 ```
