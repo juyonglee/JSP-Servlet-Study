@@ -11,3 +11,26 @@
     ```docker
     docker run --name MySQL -v /Users/sojuyong/Database/MySQL/:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=****** -d mysql
     ```
+### 라이브러리 설정
+JDBC 사용을 위해 [MySQL Connector/J](https://mvnrepository.com/artifact/mysql/mysql-connector-java/6.0.6)를 프로젝트에 추가
+```xml
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>6.0.6</version>
+</dependency>
+```
+
+### 연결 및 해제
+```Java
+// 데이터베이스명을 포함한 URL 기술  
+String url = "jdbc:mysql://localhost:3306/dbName";
+// 사용자 계정
+String userID = "root"; 
+// 사용자 계정의 패스워드   
+String userPW = "****";    
+Class.forName("com.mysql.jdbc.Driver");
+Connection conn =DriverManager.getConnection(url,userID, userPW);    
+// 연결 종료
+conn.close();
+```
