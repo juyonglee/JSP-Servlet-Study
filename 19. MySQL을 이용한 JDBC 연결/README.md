@@ -9,5 +9,5 @@
 
 2. MySQL Image를 Docker에서 실행하기
     ```docker
-    docker run --name MySql -v /Users/sojuyong/Database/MySQL/:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=****** -d mysql
+    docker run --name MySQL -v /Users/sojuyong/Database/MySQL/:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=****** -d mysql
     ```
