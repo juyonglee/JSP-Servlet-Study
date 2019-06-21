@@ -50,7 +50,7 @@ public class DatabaseTest extends HttpServlet {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			response.getWriter().append("연결 실패!");
+			response.getWriter().append("연결 종료 실패!");
 		}
 	}
 
