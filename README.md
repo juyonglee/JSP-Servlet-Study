@@ -4,7 +4,7 @@ Spring을 정복하기 위한 준비과정... :man_technologist:
 JSP와 Servlet를 꼼꼼히 정리하자!!
 
 ## Table of Contents
-1. [Web Application 이해 및 개발환경 구축](https://github.com/juyonglee/JSP-Servlet-Study/tree/master/01.%20Web%20Application%20이해%20및%20개발%20환경%20구축)
+1. [Web Application 이해 및 개발 환경 구축](https://github.com/juyonglee/JSP-Servlet-Study/tree/master/01.%20Web%20Application%20이해%20및%20개발%20환경%20구축)
 2. Servlet 기초 구성
 3. Servlet Life Cycle
 4. JSP 기본 구성
